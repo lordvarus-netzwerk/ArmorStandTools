@@ -184,6 +184,21 @@ class Config {
         } else {
             plugin.getLogger().log(Level.INFO, "PlotSquared plugin not found. Continuing without PlotSquared support.");
         }
+
+        Plugin landsplugin = plugin.getServer().getPluginManager().getPlugin("Lands");
+        if (landsplugin != null) {
+            try {
+                new LandsHook(plugin);
+                plugin.getLogger().log(Level.INFO, "Lands plugin was found. Lands support enabled.");
+            }
+            catch (Throwable e) {
+                e.printStackTrace();
+                plugin.getLogger().log(Level.WARNING, "Lands plugin was found, but there was an error initializing Lands support.");
+            }
+        } else {
+            plugin.getLogger().log(Level.INFO, "Lands plugin not found. Continuing without Lands support.");
+        }
+
         
         Plugin wgp = plugin.getServer().getPluginManager().getPlugin("WorldGuard");
         if(wgp != null && wgp instanceof WorldGuardPlugin) {

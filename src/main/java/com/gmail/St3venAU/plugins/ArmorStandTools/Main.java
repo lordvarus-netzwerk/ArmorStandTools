@@ -201,6 +201,18 @@ public class Main extends JavaPlugin {
                 return PlotSquaredHook.checkPermission(p, l);
             }
         }
+
+        debug("LandsHook.api: " + LandsHook.api);
+        if (LandsHook.api != null)
+        {
+            Location l = b.getLocation();
+            debug("LandsHook.isPlotWorld(l): " + LandsHook.isPlotWorld(l));
+            if (LandsHook.isPlotWorld(l))
+            {
+                return LandsHook.checkPermission(p, l);
+            }
+        }
+
         if(Config.worldGuardPlugin != null) {
             if(!Utils.hasPermissionNode(p, "astools.bypass-wg-flag") && !getWorldGuardAstFlag(b.getLocation())) {
                 return false;

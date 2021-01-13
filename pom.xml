@@ -23,6 +23,11 @@
         <id>IntellectualSites</id>
         <url>https://mvn.intellectualsites.com/content/groups/public/</url>
     </repository>
+    <!-- Lands -->
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 
 <dependencies>
@@ -49,6 +54,13 @@
         <groupId>com.plotsquared</groupId>
         <artifactId>PlotSquared-Core</artifactId>
         <version>5.13.3</version>
+    </dependency>
+    <!-- Lands API -->
+    <dependency>
+        <groupId>com.github.angeschossen</groupId>
+        <artifactId>LandsAPI</artifactId>
+        <version>4.12.17</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 
